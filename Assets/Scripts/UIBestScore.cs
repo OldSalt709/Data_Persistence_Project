@@ -9,9 +9,9 @@ public class UIBestScore : MonoBehaviour
     public Text bestScore_Text;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        //  Load High SCore
+        //  Load High Score
         //  If I don't this script won't know where to pull from
         MainManager.Instance.LoadHighScore();
 
@@ -21,11 +21,11 @@ public class UIBestScore : MonoBehaviour
         {
             if (MainManager.Instance.highScore != 0)
             {
-                DisplayHighScore();
+                bestScore_Text.text = "Best Score : " + MainManager.Instance.highScoreName + " : " + MainManager.Instance.highScore;
             }
             else
             {
-                DisplayName();
+                bestScore_Text.text = "Best Score : : 0";
             }
 
         }

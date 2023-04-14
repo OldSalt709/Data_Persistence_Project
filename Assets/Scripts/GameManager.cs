@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
     {
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
-        MainManager.Instance.currentScore = m_Points;
+        //MainManager.Instance.currentScore = m_Points;
     }
 
     public void GameOver()
@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
             MainManager.Instance.highScore = m_Points;
             MainManager.Instance.highScoreName = MainManager.Instance.playerName;
 
-            //  this is the sctual function that does the saving to MainManager
+            //  this is the sctual function that does the saving to MainManager and the 2 elements captured.
             MainManager.Instance.SaveHighScore(MainManager.Instance.highScore, MainManager.Instance.highScoreName);
 
             // debug log for testing
